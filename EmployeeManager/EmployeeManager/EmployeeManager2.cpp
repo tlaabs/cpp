@@ -12,6 +12,8 @@ public:
 	void showYourName() const {
 		cout << "name: " << name << endl;
 	}
+	virtual int getPay() const {}
+	virtual void showSalaryInfo() const {}
 };
 
 class PermanentWorker : public Employee {
@@ -23,7 +25,7 @@ public:
 	int getPay() const {
 		return salary;
 	}
-	void showSalaryInfo() const {
+	virtual void showSalaryInfo() const {
 		showYourName();
 		cout << "salary: " << getPay() << endl << endl;
 	}
@@ -38,11 +40,10 @@ public:
 	void addEmployee(Employee * emp) {
 		empList[empNum++] = emp;
 	}
-	void showAllSalaryInfo() const {
-		/*
+	void showAllSalaryInfo() const{
 		for (int i = 0; i < empNum; i++)
 			empList[i]->showSalaryInfo();
-			*/
+			
 	}
 	void showTotalSalary() const {
 		int sum = 0;
@@ -71,7 +72,7 @@ public:
 	int getPay() const {
 		return workTime * payPerHour;
 	}
-	void showsalaryInfo() const {
+	virtual void showsalaryInfo() const {
 		showYourName();
 		cout << "salary: " << getPay() << endl << endl;
 	}
@@ -90,7 +91,7 @@ public:
 		return PermanentWorker::getPay() +
 			(int)(salesResult*bonusRatio);
 	}
-	void showSalaryInfo() const {
+	virtual void showSalaryInfo() const {
 		showYourName();
 		cout << "salary : " << getPay() << endl << endl;
 	}

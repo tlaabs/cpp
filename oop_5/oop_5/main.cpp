@@ -1,3 +1,4 @@
+//º¸Åë¿¹±Ý°èÁÂ, ½Å¿ë½Å·Ú°èÁÂ Ãß°¡
 #include <iostream>
 #include "accountHandler.h"
 #include "account.h"
@@ -9,8 +10,6 @@ enum { CREATE = 1, DEPOSIT, WITHDRAW, SHOWALL, EXIT };
 int main() {
 	AccountHandler hdlr;
 	int accNum;
-	char name[20];
-	int balance;
 	int money;
 
 	for (;;) {
@@ -21,13 +20,7 @@ int main() {
 
 		switch (choice) {
 		case CREATE:
-			cout << "°èÁÂID: ";
-			cin >> accNum;
-			cout << "ÀÌ¸§: ";
-			cin >> name;
-			cout << "ÀÜ¾×: ";
-			cin >> balance;
-			hdlr.createAccount(accNum, name, balance);
+			hdlr.createAccount();
 			break;
 		case DEPOSIT:
 			cout << "[ÀÔ ±Ý]" << endl;
