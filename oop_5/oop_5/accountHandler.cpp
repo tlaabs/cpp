@@ -16,9 +16,39 @@ void AccountHandler::showMenu() {
 	cout << "5. 프로그램 종료" << endl;
 }
 
-void AccountHandler::createAccount(int accNum, char *name, int balance) {
+void AccountHandler::createAccount() {
+	int accNum;
+	char name[20];
+	int balance;
+
+	int type, rate, grade;
+	Account* ptr;
+	
+	cout << "[계좌종류선택]" << endl;
+	cout << "1.보통예금계좌 2.신용신뢰계좌" << endl;
+	cout << "선택: ";
+	cin >> type;
+	cout << "계좌ID: ";
+	cin >> accNum;
+	cout << "이름: ";
+	cin >> name;
+	cout << "잔액: ";
+	cin >> balance;
+	cout << "이자율 ";
+	cin >> rate;
+	switch (type) {
+	case NORMAL:
+		ptr = new NormalAccount(accNum, name, balance, rate);
+		break;
+	case CREDIT:
+		cout << "신용등급(1toA, 2toB, 3toC): ";
+		cin >> grade;
+		ptr = new HighCreditAccount(accNum, name, balance, rate, grade);
+		break;
+	}
+
 	index++;
-	acs[index] = new Account(accNum, name, balance);
+	acs[index] = ptr;
 }
 
 void AccountHandler::deposit(int accNum, int money) {
