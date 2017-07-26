@@ -1,0 +1,12 @@
+#ifndef __POINT_TEMPLATE_H__
+#define __POINT_TEMPLATE_H__
+template <class T>
+class Point {
+private:
+	T xpos, ypos;
+public:
+	Point(T x = 0, T y = 0);
+	void showPosition() const;
+};
+
+#endif
