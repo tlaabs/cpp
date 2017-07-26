@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\cpp\13_2\13_2\main.cpp(13): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+c:\cpp\13_2\13_2\main.cpp(14): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+c:\cpp\13_2\13_2\main.cpp(15): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+  13_2.vcxproj -> C:\cpp\13_2\Debug\13_2.exe
+  13_2.vcxproj -> C:\cpp\13_2\Debug\13_2.pdb (Full PDB)
